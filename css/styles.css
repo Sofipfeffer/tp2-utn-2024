@@ -6,9 +6,10 @@ body {
 }
 
 header {
-    background-color: #343a40;
+    background-color: #000000;
     color: white;
-    padding: 1em 0;
+    padding: 0.5em 0;
+    height: 5vh;
 }
 
 nav ul {
@@ -23,8 +24,19 @@ nav ul li {
 }
 
 nav ul li a {
-    color: white;
+    color: rgb(189, 167, 42);
     text-decoration: none;
+}
+
+nav ul li a:hover {
+    color: white;
+}
+
+nav ul li img {
+    width: 70px;
+    position: relative;
+    /* Ajusta este valor para sobresalir del nav */
+    z-index: 3;
 }
 
 main {
@@ -38,22 +50,49 @@ main {
     flex-direction: column;
     justify-content: center;
     margin: auto;
-    max-width: 500px;
+    max-width: 550px;
     margin: 0 auto;
 }
 
 main {
     background-image: url(../assets/Img-titulo.webp);
     background-size: cover;
-    min-height: 50vh;
 }
 
 footer {
-    background-color: #343a40;
-    color: white;
+    background-color: #000000;
+    color: rgb(189, 167, 42);
     text-align: center;
     padding: 1em 0;
     position: fixed;
     width: 100%;
     bottom: 0;
+}
+
+@media (max-width: 900px) {
+    .intro {
+        min-height: 40vh;
+        max-width: 500px;
+    }
+
+    main {
+        background-position: -130px;
+    }
+}
+
+@media (max-width: 640px) {
+    .intro {
+        min-height: 30vh;
+        max-width: 350px;
+    }
+
+    main {
+        background-position: -110px;
+    }
+}
+
+@media (max-width: 430px) {
+    main {
+        background-position: -180px;
+    }
 }

@@ -202,3 +202,15 @@
 
     }
 }
+
+
+
+@media (max-width: 640px) {
+    .titulo-magico {
+        font-size: 23px;
+    }
+
+    .parrafo-magico {
+        font-size: 15px;
+    }
+}
