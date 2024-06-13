@@ -1,56 +1,124 @@
 document.addEventListener('DOMContentLoaded', async () => {
     const characterGrid = document.getElementById('character-grid');
+    const houseFilter = document.querySelector('.house-filter');
+
     const response = await fetch('https://hp-api.onrender.com/api/characters');
     const characters = await response.json();
-    const topCharacters = characters.slice(0, 16);
 
-    topCharacters.forEach(character => {
-        const card = document.createElement('div');
-        card.className = 'card';
+    const charactersWithImages = characters.filter(character => character.image);
+    let filteredCharacters = charactersWithImages.slice(0, 30);
 
-        const cardInner = document.createElement('div');
-        cardInner.className = 'card-inner';
+    const getFrontImageByHouse = (house) => {
+        switch (house) {
+            case 'Gryffindor':
+                return '../assets/grif.png';
+            case 'Slytherin':
+                return '../assets/slit.png';
+            case 'Hufflepuff':
+                return '../assets/huff.png';
+            case 'Ravenclaw':
+                return '../assets/rev.png';
+            default:
+                return '../assets/frente.png';
+        }
+    };
 
-        // Front of the card
-        const cardFront = document.createElement('div');
-        cardFront.className = 'card-front';
-        const frontImg = document.createElement('img');
-        frontImg.src = '../assets/frente.png';  // Reemplaza con una imagen predeterminada transparente o cualquier otra
-        frontImg.style.backgroundImage = `url(${character.image || 'placeholder.jpg'})`;
+    const getBackImageByHouse = (house) => {
+        switch (house) {
+            case 'Gryffindor':
+                return '../assets/grif-d.png';
+            case 'Slytherin':
+                return '../assets/slit-d.png';
+            case 'Hufflepuff':
+                return '../assets/huff-d.png';
+            case 'Ravenclaw':
+                return '../assets/rev-d.png';
+            default:
+                return '../assets/dorso.png';
+        }
+    };
 
-        const frontTextOverlay = document.createElement('div');
-        frontTextOverlay.className = 'text-overlay';
-        frontTextOverlay.textContent = character.name;
+    const showCharacters = () => {
+        characterGrid.innerHTML = '';
 
-        cardFront.appendChild(frontImg);
-        cardFront.appendChild(frontTextOverlay);
+        filteredCharacters.forEach(character => {
+            const card = document.createElement('div');
+            card.className = 'card';
 
-        // Back of the card
-        const cardBack = document.createElement('div');
-        cardBack.className = 'card-back';
-        const backImg = document.createElement('img');
-        backImg.src = '../assets/dorso.png';  // Reemplaza con una imagen predeterminada transparente o cualquier otra
-        backImg.style.backgroundImage = `url(${character.image || 'placeholder.jpg'})`;
+            const cardInner = document.createElement('div');
+            cardInner.className = 'card-inner';
 
-        const backTextOverlay = document.createElement('div');
-        backTextOverlay.className = 'text-overlay';
-        backTextOverlay.textContent = character.name;
+            // Frente
+            const cardFront = document.createElement('div');
+            cardFront.className = 'card-front';
+            const frontImg = document.createElement('img');
+            frontImg.src = getFrontImageByHouse(character.house);
+            frontImg.style.backgroundImage = `url(${character.image || 'placeholder.jpg'})`;
 
-        const details = document.createElement('div');
-        details.className = 'details';
-        details.innerHTML = `
-           <p><strong>Ancestry:</strong> ${character.ancestry}</p>
-           <p><strong>Date of Birth:</strong> ${character.dateOfBirth}</p>
-           <p><strong>House:</strong> ${character.house}</p>
-       `;
+            const frontTextOverlay = document.createElement('div');
+            frontTextOverlay.className = 'text-overlay';
+            frontTextOverlay.textContent = character.name;
 
-        cardBack.appendChild(backImg);
-        cardBack.appendChild(backTextOverlay);
-        cardBack.appendChild(details);
+            cardFront.appendChild(frontImg);
+            cardFront.appendChild(frontTextOverlay);
 
-        cardInner.appendChild(cardFront);
-        cardInner.appendChild(cardBack);
-        card.appendChild(cardInner);
-        characterGrid.appendChild(card);
+            // Dorso
+            const cardBack = document.createElement('div');
+            cardBack.className = 'card-back';
+            const backImg = document.createElement('img');
+            backImg.src = getBackImageByHouse(character.house);
+            backImg.style.backgroundImage = `url(${character.image || 'placeholder.jpg'})`;
+
+            const backTextOverlay = document.createElement('div');
+            backTextOverlay.className = 'text-overlay';
+            backTextOverlay.textContent = character.name;
+
+            const details = document.createElement('div');
+            details.className = 'details';
+
+            if (character.ancestry) {
+                const ancestry = document.createElement('p');
+                ancestry.innerHTML = `<strong>Ancestry:</strong> ${character.ancestry}`;
+                details.appendChild(ancestry);
+            }
+            if (character.dateOfBirth) {
+                const dateOfBirth = document.createElement('p');
+                dateOfBirth.innerHTML = `<strong>Date of Birth:</strong> ${character.dateOfBirth}`;
+                details.appendChild(dateOfBirth);
+            }
+            if (character.house) {
+                const house = document.createElement('p');
+                house.innerHTML = `<strong>House:</strong> ${character.house}`;
+                details.appendChild(house);
+            }
+            if (character.patronus) {
+                const patronus = document.createElement('p');
+                patronus.innerHTML = `<strong>Patronus:</strong> ${character.patronus}`;
+                details.appendChild(patronus);
+            }
+
+            cardBack.appendChild(backImg);
+            cardBack.appendChild(backTextOverlay);
+            cardBack.appendChild(details);
+
+            cardInner.appendChild(cardFront);
+            cardInner.appendChild(cardBack);
+            card.appendChild(cardInner);
+            characterGrid.appendChild(card);
+        });
+    };
+
+    houseFilter.addEventListener('click', (event) => {
+        if (event.target.classList.contains('house-icon')) {
+            const selectedHouse = event.target.getAttribute('data-house');
+            if (selectedHouse === 'All') {
+                filteredCharacters = charactersWithImages.slice(0, 30);
+            } else {
+                filteredCharacters = charactersWithImages.filter(character => character.house === selectedHouse);
+            }
+            showCharacters();
+        }
     });
+
+    showCharacters();
 });

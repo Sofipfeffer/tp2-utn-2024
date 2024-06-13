@@ -6,22 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Personajes - Harry Potter</title>
     <link rel="icon" href="../assets/logo.png" type="image/png">
-    <link rel="stylesheet" href="../css/stylepersonajes.css" />
     <link rel="stylesheet" href="../css/styles.css" />
 </head>
 
-<body>
+<body id="personajes">
     <header>
         <nav>
             <ul>
                 <li><a href="../index.html">Inicio</a></li>
-                <li><img src="../assets/logo.png" alt="Logo Hogwarts"></li>
+                <li><a href="../index.html"><img src="../assets/logo.png" alt="Logo Hogwarts"></a></li>
                 <li><a href="../pages/personajes.html">Personajes</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
+        <div class="house-filter">
+            <img src="../assets/casas/grif.png" alt="Gryffindor" class="house-icon" data-house="Gryffindor">
+            <img src="../assets/casas/slit.png" alt="Slytherin" class="house-icon" data-house="Slytherin">
+            <img src="../assets/casas/huf.png" alt="Hufflepuff" class="house-icon" data-house="Hufflepuff">
+            <img src="../assets/casas/rev.png" alt="Ravenclaw" class="house-icon" data-house="Ravenclaw">
+        </div>
         <section id="tarjetas">
             <div class="container">
                 <div id="character-grid" class="character-grid"></div>
