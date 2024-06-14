@@ -102,6 +102,50 @@ footer {
     bottom: 0;
 }
 
+/* INDEX */
+
+.filters {
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+
+.filter-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.filter-item {
+    text-align: center;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.filter-item img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.results {
+    padding: 20px;
+}
+
+.result-item {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 5px;
+    background-color: #f9f9f9;
+}
+
+#spell-search {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
 /* PERSONAJES */
 
 #tarjetas {
@@ -279,7 +323,7 @@ footer {
     }
 
     #inicio {
-        background-position: -130px;
+        background-position: -170px;
     }
 
     .container {
@@ -305,8 +349,8 @@ footer {
     }
 
     .card-back .text-overlay {
-        bottom: 6%;
-        font-size: 20px;
+        bottom: 5%;
+        font-size: 18px;
     }
 
     .card-back .details {
