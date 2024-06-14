@@ -3,15 +3,46 @@
     padding: 0;
 }
 
+@font-face {
+    font-family: 'HarryP';
+    src: url('../assets/harry_p/HarryP.woff') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.lugrasimo-regular {
+    font-family: "Lugrasimo", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+nav,
+p {
+    font-family: "Poppins", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.text-overlay {
+    font-family: "Lugrasimo", cursive;
+}
 
 nav {
     background-color: #000000;
     color: white;
     padding: 0.5em 0;
-    height: 5vh;
+    height: 50px;
     position: fixed;
     z-index: 10;
     width: 100%;
+}
+
+.nav-palabras {
+    width: 50px;
 }
 
 nav ul {
@@ -28,6 +59,7 @@ nav ul li {
 nav ul li a {
     color: rgb(189, 167, 42);
     text-decoration: none;
+    min-width: 90px;
 }
 
 nav ul li a:hover {
@@ -37,7 +69,6 @@ nav ul li a:hover {
 nav ul li img {
     width: 70px;
     position: relative;
-    /* Ajusta este valor para sobresalir del nav */
     z-index: 3;
 }
 
@@ -142,7 +173,7 @@ footer {
     color: white;
     background-color: #efb400;
     padding: 5px 15px;
-    font-size: 15px;
+    font-size: 12px;
     font-weight: bold;
     z-index: 3;
 }
@@ -159,7 +190,7 @@ footer {
     transform: translateX(-50%);
     color: white;
     padding: 5px 15px;
-    font-size: 15px;
+    font-size: 12px;
     font-weight: bold;
     z-index: 3;
 }
@@ -200,7 +231,7 @@ footer {
 
 @media (max-width: 900px) {
     .intro {
-        min-height: 40vh;
+        min-height: 60vh;
         max-width: 500px;
     }
 
@@ -243,12 +274,12 @@ footer {
 
 @media (max-width: 640px) {
     .intro {
-        min-height: 30vh;
+        min-height: 50vh;
         max-width: 350px;
     }
 
     #inicio {
-        background-position: -110px;
+        background-position: -130px;
     }
 
     .container {
@@ -275,18 +306,18 @@ footer {
 
     .card-back .text-overlay {
         bottom: 6%;
-        font-size: 22px;
+        font-size: 20px;
     }
 
     .card-back .details {
-        font-size: 18px;
-        line-height: 28px;
+        font-size: 16px;
+        line-height: 26px;
     }
 }
 
-@media (max-width: 430px) {
+@media (max-width: 500px) {
     #inicio {
-        background-position: -180px;
+        background-position: -195px;
     }
 
     .house-filter {
@@ -303,12 +334,18 @@ footer {
     }
 
     .card-back .text-overlay {
-        bottom: 6%;
+        bottom: 5%;
         font-size: 12px;
     }
 
     .card-back .details {
-        font-size: 12px;
-        line-height: 18px;
+        font-size: 11px;
+        line-height: 16px;
+    }
+}
+
+@media (max-width: 390px) {
+    #inicio {
+        background-position: -200px;
     }
 }

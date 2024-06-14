@@ -1,19 +1,41 @@
+@font-face {
+    font-family: 'HarryP';
+    src: url('../assets/harry_p/HarryP.woff') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.lugrasimo-regular {
+    font-family: "Lugrasimo", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.hp-font {
+    font-family: 'HarryP', "Lugrasimo", cursive;
+    font-weight: 900;
+    font-size: 65px;
+}
+
+
 .titulo-magico {
-    font-size: 36px;
-    font-family: 'HarryPotter', cursive;
+    font-size: 25px;
+    font-family: "Lugrasimo", cursive;
     position: relative;
     overflow: hidden;
     display: inline-block;
     text-align: center;
+    line-height: 70px;
 }
 
 .parrafo-magico {
     font-size: 16px;
-    font-family: 'HarryPotter', cursive;
+    font-family: "Lugrasimo", cursive;
     position: relative;
     overflow: hidden;
     display: inline-block;
     text-align: center;
+    margin: 20px 0;
 }
 
 .titulo-magico span {
@@ -184,17 +206,13 @@
 
 .parrafo-magico {
     opacity: 0;
-    /* Inicialmente oculto */
     animation: appear 2s forwards 3.6s;
-    /* Animación de aparición durante 2 segundos */
-
 }
 
 @keyframes appear {
     0% {
         opacity: 0;
         text-shadow: none;
-        /* Inicialmente sin sombra */
     }
 
     100% {
@@ -205,12 +223,41 @@
 
 
 
-@media (max-width: 640px) {
+@media (max-width: 900px) {
     .titulo-magico {
         font-size: 23px;
     }
 
     .parrafo-magico {
         font-size: 15px;
+    }
+
+    .hp-font {
+        font-size: 65px;
+    }
+}
+
+@media (max-width: 640px) {
+    .titulo-magico {
+        font-size: 15px;
+    }
+
+    .parrafo-magico {
+        font-size: 15px;
+    }
+
+    .hp-font {
+        font-size: 65px;
+    }
+}
+
+@media (max-width: 390px) {
+    .titulo-magico {
+        font-size: 13px;
+        margin-top: 50px;
+    }
+
+    .hp-font {
+        font-size: 55px;
     }
 }
