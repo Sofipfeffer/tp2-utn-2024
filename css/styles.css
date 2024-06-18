@@ -106,13 +106,16 @@ footer {
 
 .filters {
     background-color: #f0f0f0;
-    padding: 20px;
+    min-height: 100px;
 }
 
 .filter-container {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
+    width: 100vw;
+    position: absolute;
+    margin-top: -80px;
 }
 
 .filter-item {
@@ -130,6 +133,14 @@ footer {
 
 .results {
     padding: 20px;
+    margin-bottom: 50px;
+    background-color: #f0f0f0;
+    text-align: center;
+    min-height: 50vh;
+}
+
+.results h1 {
+    margin: 10px 0;
 }
 
 .result-item {
@@ -140,11 +151,52 @@ footer {
     background-color: #f9f9f9;
 }
 
-#spell-search {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
+#results-container {
+    margin: 50px;
 }
+
+#results {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+#results img {
+    width: 100px;
+}
+
+#spell-list-container,
+#professors-filter-container {
+    margin-top: 20px;
+    width: 400px;
+    margin: auto;
+}
+
+#search-bar,
+#house-filter {
+    display: block;
+    padding: 8px;
+    width: 100%;
+    max-width: 200px;
+    margin: 10px auto;
+}
+
+#spell-list,
+#results,
+#professor-list {
+    list-style: none;
+    padding: 0;
+}
+
+#spell-list li,
+#results li,
+#professor-list li {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
 
 /* PERSONAJES */
 

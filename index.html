@@ -78,7 +78,7 @@
     <section class="filters">
         <div class="filter-container">
             <div class="filter-item" id="hogwarts-houses">
-                <img src="assets/inicio/casas.webp" alt="Casas de Hogwarts">
+                <img src="assets/inicio/casas.jpeg" alt="Casas de Hogwarts">
                 <p>Casas de Hogwarts</p>
             </div>
             <div class="filter-item" id="spells">
@@ -91,8 +91,24 @@
             </div>
         </div>
     </section>
-    <section class="results" id="results">
-        <div id="results-container"></div>
+    <section class="results">
+        <div class="results-container" id="results-container">
+            <div id="results"></div>
+        </div>
+        <div id="spell-list-container">
+            <input type="text" id="search-bar" placeholder="Buscar por nombre...">
+            <div id="spell-list"></div>
+        </div>
+        <div id="professors-filter-container">
+            <select id="house-filter">
+                <option value="">Todas las casas</option>
+                <option value="Gryffindor">Gryffindor</option>
+                <option value="Hufflepuff">Hufflepuff</option>
+                <option value="Ravenclaw">Ravenclaw</option>
+                <option value="Slytherin">Slytherin</option>
+            </select>
+            <ul id="professor-list"></ul>
+        </div>
     </section>
     <footer>
         <p>&copy; 2024 Proyecto Harry Potter. Todos los derechos reservados.</p>
