@@ -11,30 +11,30 @@ document.addEventListener('DOMContentLoaded', async () => {
     const getFrontImageByHouse = (house) => {
         switch (house) {
             case 'Gryffindor':
-                return '../assets/grif.png';
+                return '../assets/cromos/grif.png';
             case 'Slytherin':
-                return '../assets/slit.png';
+                return '../assets/cromos/slit.png';
             case 'Hufflepuff':
-                return '../assets/huff.png';
+                return '../assets/cromos/huff.png';
             case 'Ravenclaw':
-                return '../assets/rev.png';
+                return '../assets/cromos/rev.png';
             default:
-                return '../assets/frente.png';
+                return '../assets/cromos/frente.png';
         }
     };
 
     const getBackImageByHouse = (house) => {
         switch (house) {
             case 'Gryffindor':
-                return '../assets/grif-d.png';
+                return '../assets/cromos/grif-d.png';
             case 'Slytherin':
-                return '../assets/slit-d.png';
+                return '../assets/cromos/slit-d.png';
             case 'Hufflepuff':
-                return '../assets/huff-d.png';
+                return '../assets/cromos/huff-d.png';
             case 'Ravenclaw':
-                return '../assets/rev-d.png';
+                return '../assets/cromos/rev-d.png';
             default:
-                return '../assets/dorso.png';
+                return '../assets/cromos/dorso.png';
         }
     };
 
