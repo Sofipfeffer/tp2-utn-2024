@@ -356,10 +356,10 @@ footer {
 }
 
 #personajes {
-    background-image: url('../assets/fondo.jpg');
+    background-image: url('../assets/fondo.webp');
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: right;
     background-attachment: fixed;
     min-height: 100vh;
 }
